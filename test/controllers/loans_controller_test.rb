@@ -18,7 +18,7 @@ class LoansControllerTest < ActionController::TestCase
 
   test "should create loan" do
     assert_difference('Loan.count') do
-      post :create, loan: { anualincome: @loan.anualincome, desc: @loan.desc, dti: @loan.dti, emplength: @loan.emplength, ficohigh: @loan.ficohigh, ficolow: @loan.ficolow, homeowner: @loan.homeowner, intrate: @loan.intrate, loanamount: @loan.loanamount, loanstatus: @loan.loanstatus, numinqsixmonths: @loan.numinqsixmonths, subgrade: @loan.subgrade, term: @loan.term, verficationstatus: @loan.verficationstatus }
+      post :create, loan: {  }
     end
 
     assert_redirected_to loan_path(assigns(:loan))
@@ -35,7 +35,7 @@ class LoansControllerTest < ActionController::TestCase
   end
 
   test "should update loan" do
-    patch :update, id: @loan, loan: { anualincome: @loan.anualincome, desc: @loan.desc, dti: @loan.dti, emplength: @loan.emplength, ficohigh: @loan.ficohigh, ficolow: @loan.ficolow, homeowner: @loan.homeowner, intrate: @loan.intrate, loanamount: @loan.loanamount, loanstatus: @loan.loanstatus, numinqsixmonths: @loan.numinqsixmonths, subgrade: @loan.subgrade, term: @loan.term, verficationstatus: @loan.verficationstatus }
+    patch :update, id: @loan, loan: {  }
     assert_redirected_to loan_path(assigns(:loan))
   end
 

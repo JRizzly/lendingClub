@@ -15,6 +15,16 @@ class LoansController < ApplicationController
   # GET /loans/new
   def new
     @loan = Loan.new
+    
+    filename = 'public/output_Modified.csv'
+    options = {:key_mapping => {:unwanted_row => nil, :old_row_name => :new_name}}
+    n = SmarterCSV.process(filename, options) do |array|
+      # we're passing a block in, to process each resulting hash / =row (the block takes array of hashes)
+      # when chunking is not enabled, there is only one hash in each array
+      Loan.create( array.first )
+    end
+    
+    
   end
 
   # GET /loans/1/edit
@@ -69,6 +79,6 @@ class LoansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def loan_params
-      params.require(:loan).permit(:loanamount, :term, :intrate, :subgrade, :emplength, :homeowner, :anualincome, :verficationstatus, :loanstatus, :dti, :ficolow, :ficohigh, :numinqsixmonths, :desc)
+      params.fetch(:loan, {})
     end
 end

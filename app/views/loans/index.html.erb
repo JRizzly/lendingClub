@@ -5,20 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Loanamount</th>
-      <th>Term</th>
-      <th>Intrate</th>
-      <th>Subgrade</th>
-      <th>Emplength</th>
-      <th>Homeowner</th>
-      <th>Anualincome</th>
-      <th>Verficationstatus</th>
-      <th>Loanstatus</th>
-      <th>Dti</th>
-      <th>Ficolow</th>
-      <th>Ficohigh</th>
-      <th>Numinqsixmonths</th>
-      <th>Desc</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,20 +12,6 @@
   <tbody>
     <% @loans.each do |loan| %>
       <tr>
-        <td><%= loan.loanamount %></td>
-        <td><%= loan.term %></td>
-        <td><%= loan.intrate %></td>
-        <td><%= loan.subgrade %></td>
-        <td><%= loan.emplength %></td>
-        <td><%= loan.homeowner %></td>
-        <td><%= loan.anualincome %></td>
-        <td><%= loan.verficationstatus %></td>
-        <td><%= loan.loanstatus %></td>
-        <td><%= loan.dti %></td>
-        <td><%= loan.ficolow %></td>
-        <td><%= loan.ficohigh %></td>
-        <td><%= loan.numinqsixmonths %></td>
-        <td><%= loan.desc %></td>
         <td><%= link_to 'Show', loan %></td>
         <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
         <td><%= link_to 'Destroy', loan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
