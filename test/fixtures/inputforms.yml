@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  loan_amnt: 9.99
+  installment: 9.99
+  grade: MyString
+  emp_length: 9.99
+  annual_inc: 9.99
+  dti: 9.99
+  fico_range_low: 9.99
+  fico_range_high: 9.99
+  number_inq_last_6months: 9.99
+
+two:
+  loan_amnt: 9.99
+  installment: 9.99
+  grade: MyString
+  emp_length: 9.99
+  annual_inc: 9.99
+  dti: 9.99
+  fico_range_low: 9.99
+  fico_range_high: 9.99
+  number_inq_last_6months: 9.99

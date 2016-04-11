@@ -15,7 +15,6 @@ class LoansController < ApplicationController
   # GET /loans/new
   def new
     @loan = Loan.new
-    
     filename = 'public/output_Modified.csv'
     options = {:key_mapping => {:unwanted_row => nil, :old_row_name => :new_name}}
     n = SmarterCSV.process(filename, options) do |array|

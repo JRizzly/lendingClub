@@ -1,0 +1,53 @@
+<%= form_for(@inputform) do |f| %>
+  <% if @inputform.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inputform.errors.count, "error") %> prohibited this inputform from being saved:</h2>
+
+      <ul>
+      <% @inputform.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :loan_amnt %><br>
+    <%= f.text_field :loan_amnt %>
+  </div>
+  <div class="field">
+    <%= f.label :installment %><br>
+    <%= f.text_field :installment %>
+  </div>
+  <div class="field">
+    <%= f.label :grade %><br>
+    <%= f.text_field :grade %>
+  </div>
+  <div class="field">
+    <%= f.label :emp_length %><br>
+    <%= f.text_field :emp_length %>
+  </div>
+  <div class="field">
+    <%= f.label :annual_inc %><br>
+    <%= f.text_field :annual_inc %>
+  </div>
+  <div class="field">
+    <%= f.label :dti %><br>
+    <%= f.text_field :dti %>
+  </div>
+  <div class="field">
+    <%= f.label :fico_range_low %><br>
+    <%= f.text_field :fico_range_low %>
+  </div>
+  <div class="field">
+    <%= f.label :fico_range_high %><br>
+    <%= f.text_field :fico_range_high %>
+  </div>
+  <div class="field">
+    <%= f.label :number_inq_last_6months %><br>
+    <%= f.text_field :number_inq_last_6months %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

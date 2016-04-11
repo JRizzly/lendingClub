@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410011745) do
+ActiveRecord::Schema.define(version: 20160411221613) do
+
+  create_table "inputforms", force: :cascade do |t|
+    t.decimal  "loan_amnt"
+    t.decimal  "installment"
+    t.string   "grade"
+    t.decimal  "emp_length"
+    t.decimal  "annual_inc"
+    t.decimal  "dti"
+    t.decimal  "fico_range_low"
+    t.decimal  "fico_range_high"
+    t.decimal  "number_inq_last_6months"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "loans", force: :cascade do |t|
     t.integer "member_id"

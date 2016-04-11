@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Inputforms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Loan amnt</th>
+      <th>Installment</th>
+      <th>Grade</th>
+      <th>Emp length</th>
+      <th>Annual inc</th>
+      <th>Dti</th>
+      <th>Fico range low</th>
+      <th>Fico range high</th>
+      <th>Number inq last 6months</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inputforms.each do |inputform| %>
+      <tr>
+        <td><%= inputform.loan_amnt %></td>
+        <td><%= inputform.installment %></td>
+        <td><%= inputform.grade %></td>
+        <td><%= inputform.emp_length %></td>
+        <td><%= inputform.annual_inc %></td>
+        <td><%= inputform.dti %></td>
+        <td><%= inputform.fico_range_low %></td>
+        <td><%= inputform.fico_range_high %></td>
+        <td><%= inputform.number_inq_last_6months %></td>
+        <td><%= link_to 'Show', inputform %></td>
+        <td><%= link_to 'Edit', edit_inputform_path(inputform) %></td>
+        <td><%= link_to 'Destroy', inputform, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inputform', new_inputform_path %>

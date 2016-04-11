@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Loan amnt:</strong>
+  <%= @inputform.loan_amnt %>
+</p>
+
+<p>
+  <strong>Installment:</strong>
+  <%= @inputform.installment %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @inputform.grade %>
+</p>
+
+<p>
+  <strong>Emp length:</strong>
+  <%= @inputform.emp_length %>
+</p>
+
+<p>
+  <strong>Annual inc:</strong>
+  <%= @inputform.annual_inc %>
+</p>
+
+<p>
+  <strong>Dti:</strong>
+  <%= @inputform.dti %>
+</p>
+
+<p>
+  <strong>Fico range low:</strong>
+  <%= @inputform.fico_range_low %>
+</p>
+
+<p>
+  <strong>Fico range high:</strong>
+  <%= @inputform.fico_range_high %>
+</p>
+
+<p>
+  <strong>Number inq last 6months:</strong>
+  <%= @inputform.number_inq_last_6months %>
+</p>
+
+<%= link_to 'Edit', edit_inputform_path(@inputform) %> |
+<%= link_to 'Back', inputforms_path %>

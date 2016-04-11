@@ -12,7 +12,7 @@
   <tbody>
     <% @loans.each do |loan| %>
       <tr>
-        <%= loan.member_id %>
+        <%= loan.desc %>
         
         <td><%= link_to 'Show', loan %></td>
         <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
