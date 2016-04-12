@@ -12,4 +12,4 @@ We have collected the peer to peer lending data from LendingClub.com. While they
 
 ###How to compile (Algorithm Checkpoint)
 
-To compile this code please download all of the files in this git hub. Then run the command python al
+To compile this code please download all of the files in this git hub. Then run the command python AlgorithmCheckPoint.py 
