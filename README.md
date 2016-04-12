@@ -12,7 +12,7 @@ We have collected the peer to peer lending data from LendingClub.com. While they
 
 ###How to compile (Algorithm Checkpoint)
 
-To compile this code please download all of the files in this git hub. Then run the command: *python AlgorithmCheckPoint.py* This will use the 2007-2011-Data.csv and 
+To compile this code please download all of the files in this git hub. Then run the command: *python AlgorithmCheckPoint.py* This will use sample data generated in the program to compare the 4 sample loans to one another. The loans are compared using 7 seperate criteria criteria. These criteria are loan amount, interest rate, the monthly installment, the annual income of the borrower, the debt to income ratio, the borrower's Fico score, and how often the borrower's Fico score has been pulled. We are using sample data generated within the program since pulling data from the CSV file using python takes a large amount of time. However we will be using a web application via ruby on rails where we will port the majority of our code over to. The web application is located at https://github.com/JRizzly/lendingClub/tree/WebApp which can be run via cloud9 if you clone over the data into a work space there.
 
 ####Photo of algorithm in action:
 ![alt text] (https://github.com/JRizzly/lendingClub/blob/master/AlgorithmCheckPoint.png)
