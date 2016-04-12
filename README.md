@@ -14,5 +14,5 @@ We have collected the peer to peer lending data from LendingClub.com. While they
 
 To compile this code please download all of the files in this git hub. Then run the command: *python AlgorithmCheckPoint.py* This will use the 2007-2011-Data.csv and 
 
-Photo of algorithm in action:
+####Photo of algorithm in action:
 ![alt text] (https://github.com/JRizzly/lendingClub/blob/master/AlgorithmCheckPoint.png)
