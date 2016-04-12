@@ -6,7 +6,6 @@ import glob
 import sys
 import math
 import re
-from textstat.textstat import textstat
 from math import *
 
 class Loan_Vector:
