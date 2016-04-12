@@ -7,11 +7,11 @@ import sys
 import math
 import re
 from textstat.textstat import textstat
-
+from math import *
 
 class Loan_Vector:
     #Quatitative Data for Vectors
-    id = 0
+    idd = 0.0
     loan_amount = 0
     term = 0
     int_rate = 0
@@ -34,20 +34,24 @@ class Loan_Vector:
     number_inq_last_6months = 0
     #description length
     #desc_length = 0
+    data_matrix = [0.0,0,0,0,0,0]
 
     def set_Values(self, data):
         #Quatitative Data for Vectors
-        self.id = data[0]
-        self.loan_amount = data[1]
+        self.idd = data[0]
+        self.loan_amount = data[1]        
+        #self.data_matrix[0] = float(data[1])
         self.term = data[2]
         self.int_rate = data[3]
         self.installment = data[4]
+        #self.data_matrix[1] = float(data[4])
         #sub grade is 0 to 35 with A1,A2, A3, A4,A5, B1...
         self.sub_grade = data[5]
         self.emp_length = data[6]
         #Home ownership 0 = rent, 1 = mortgage, 2 = own 
         self.home_ownership = data[7]
         self.annual_income = data[8]
+        #self.data_matrix[2] = float(data[8])
         #verified 0 is no, 1 is yes
         self.verification_status = data[9]
         #fully paid: 0 is no, 1 is yes
@@ -55,8 +59,11 @@ class Loan_Vector:
         #purpose will come back to this
         #purpose = 0
         self.dti = data[11]
+        #self.data_matrix[3] = float(data[11])
         self.fico_low = data[12]
+        #self.data_matrix[4] = float(data[12])
         self.fico_high = data[13]
+        #self.data_matrix[5] = float(data[13])
         self.number_inq_last_6months = data[14]
         #description length
         #desc_length = 0
@@ -66,7 +73,7 @@ class Loan_Vector:
         #state = 'xx'
     
     def print_vector(self):
-        print "Id: " + str(self.id)
+        print "Id: " + str(self.idd)
         print "Loan Amount: " + str(self.loan_amount)
         print "Term: " + str(self.term)
         print "Interest Rate: " + str(self.int_rate)
@@ -112,9 +119,9 @@ def file_to_memory(filename):
                 data.append(row_list[c_w_w_nums[j]])
             Loan_Vec.set_Values(data)
             list_of_loan_vectors.append(Loan_Vec)
-                
-    for i in range(0, len(list_of_loan_vectors)):
-        list_of_loan_vectors[i].print_vector()
+
+    
+    return list_of_loan_vectors
 
     
     
@@ -142,30 +149,17 @@ def initial_function(filename):
         print "Total Number of Loans: " + str(i)
         print "Fully Paid Loans: " + str(j)
         print "Number of available types of criteria: " + str(26)
-        
 
-'''
-#when we do analysis of the loans reading level
 
-test_data1 = "Research in topology per se is currently concentrated to a large extent on the study of manifolds in low dimensions. Topics of interest include knot theory, 3- and 4-dimensional manifolds, and manifolds with other structures such as symplectic 4-manifolds, contact 3-manifolds, hyperbolic 3-manifolds. Research problems are often motivated by parts of theoretical physics, and are related to geometric group theory, topological quantum field theories, gauge theory and Seiberg-Witten theory, and higher dimensional topology."
+'''I got help from here: https://dataaspirant.com/2015/04/11/five-most-popular-similarity-measures-implementation-in-python/'''
+def square_rooted(x):
+    return round(sqrt(sum([a*a for a in x])),10)
 
-print "flesch"
-print textstat.flesch_reading_ease(test_data1)
-print "smog"
-print textstat.smog_index(test_data1)
-print "flesch_kincaid"
-print textstat.flesch_kincaid_grade(test_data1)
-print textstat.coleman_liau_index(test_data1)
-print textstat.automated_readability_index(test_data1)
-print textstat.dale_chall_readability_score(test_data1)
-print "difficult words"
-print textstat.difficult_words(test_data1)
-print textstat.linsear_write_formula(test_data1)
-print textstat.gunning_fog(test_data1)
-print "text standard"
-print textstat.text_standard(test_data1)
-
-'''
+def cosine_similarity(x,y):
+    numerator = sum(a*b for a,b in zip(x,y))
+    denominator = square_rooted(x)*square_rooted(y)
+    return round(numerator/float(denominator),5)
+ 
 
 
 #Starging here!!!
@@ -175,14 +169,22 @@ print textstat.text_standard(test_data1)
 loan_vector_list = file_to_memory('2007-2011-Data.csv')
 
 
+for i in range(0, 2):
+    loan_vector_list[i].print_vector()
+    loan_vector_list[i].print_vector()
+
+vec0 = [5000.0, 10.65, 162.87, 24000.0, 27.65, 735.0, 1.0]
+vec1 = [2500.0, 15.27, 59.83, 30000.0, 1.0, 740.0, 5.0]
+vec2 = [30000.0, 21.22, 400.0, 100000.0, 14.0, 720, 2.0]
+vec3 = [5000.0, 33, 22,22,22,22,22]
 
 
-
-
-
-
-
-
+print "0 & 1: " + str(cosine_similarity( vec0, vec1 ))
+print "1 & 2: " + str(cosine_similarity( vec1, vec2 ))
+print "0 & 2: " + str(cosine_similarity( vec0, vec2 ))
+print "3 & 0: " + str(cosine_similarity( vec3, vec0 ))
+print "3 & 1: " + str(cosine_similarity( vec3, vec1 ))
+print "3 & 2: " + str(cosine_similarity( vec3, vec2 ))
 
 
 
