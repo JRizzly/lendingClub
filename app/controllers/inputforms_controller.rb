@@ -10,6 +10,10 @@ class InputformsController < ApplicationController
   # GET /inputforms/1
   # GET /inputforms/1.json
   def show
+    @tempinput = Inputform.find(id: params[:id])
+    @temploan = Loan.where(loan_amnt: 5000)
+    
+    
   end
 
   # GET /inputforms/new

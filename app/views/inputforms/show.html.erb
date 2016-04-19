@@ -45,5 +45,13 @@
   <%= @inputform.number_inq_last_6months %>
 </p>
 
+<%= @temploan.each do |temp| %>
+      <tr>
+        <td><%= temp.loan_amnt %></td>
+        <BR>
+      </tr>
+ <% end %>
+
+
 <%= link_to 'Edit', edit_inputform_path(@inputform) %> |
 <%= link_to 'Back', inputforms_path %>

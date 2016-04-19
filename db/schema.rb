@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411221613) do
+ActiveRecord::Schema.define(version: 20160419164550) do
+
+  create_table "homes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "inputforms", force: :cascade do |t|
     t.decimal  "loan_amnt"
