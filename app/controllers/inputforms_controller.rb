@@ -10,9 +10,34 @@ class InputformsController < ApplicationController
   # GET /inputforms/1
   # GET /inputforms/1.json
   def show
-    @tempinput = Inputform.find(id: params[:id])
-    @temploan = Loan.where(loan_amnt: 5000)
+    @tempinput = Inputform.find(params[:id])
+    @temploan = Loan.where("loan_amnt > ?", 500).limit(1000)
     
+    @inputVector = [ @tempinput.loan_amnt.to_f, @tempinput.installment.to_f, @tempinput.annual_inc.to_f, @tempinput.dti.to_f, @tempinput.fico_range_low.to_f, @tempinput.fico_range_high.to_f, @tempinput.number_inq_last_6months.to_f]
+    
+    @listOfVectors = []
+    @listOfIndex = []
+    for loan in @temploan do
+        newVector = [loan.loan_amnt.to_f,loan.installment.to_f, loan.annual_inc.to_f, loan.dti.to_f, loan.fico_range_low.to_f, loan.fico_range_high.to_f, loan.inq_last_6mths.to_f]
+        @listOfVectors.push(newVector)
+        @listOfIndex.push(loan.id)
+    end 
+    
+    
+    
+    knn = KNN.new(@listOfVectors, :distance_measure => :cosine_similarity)
+    @globals = knn.nearest_neighbours( @inputVector, @tempinput.k.to_i)
+    
+    for index in @globals do
+        index.first #this should be pulling the "fully paid" data for the loan to send to the html for displaying stats. 
+        
+    end
+    
+    
+    
+    #puts listOfVectors
+    
+    #KNN.new(@data, :distance_measure => :euclidean_distance)
     
   end
 
@@ -73,6 +98,6 @@ class InputformsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inputform_params
-      params.require(:inputform).permit(:loan_amnt, :installment, :grade, :emp_length, :annual_inc, :dti, :fico_range_low, :fico_range_high, :number_inq_last_6months)
+      params.require(:inputform).permit(:loan_amnt, :installment, :grade, :emp_length, :annual_inc, :dti, :fico_range_low, :fico_range_high, :number_inq_last_6months, :k)
     end
 end

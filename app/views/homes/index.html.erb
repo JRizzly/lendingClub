@@ -1,25 +1,950 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Homes</h1>
+<!doctype html>
+<head>
+    
+    <title>Big Data 4a Big Investment</title>
+    
+    <style type="text/css">
+        p{
+            margin:10px 0;
+            padding:0;
+        }
+    table{
+        border-collapse:collapse;
+    }
+    h1,h2,h3,h4,h5,h6{
+        display:block;
+        margin:0;
+        padding:0;
+    }
+    img,a img{
+        border:0;
+        height:auto;
+        outline:none;
+        text-decoration:none;
+    }
+    body,#bodyTable,#bodyCell{
+        height:100%;
+        margin:0;
+        padding:0;
+        width:100%;
+    }
+    #outlook a{
+        padding:0;
+    }
+    img{
+        -ms-interpolation-mode:bicubic;
+    }
+    table{
+        mso-table-lspace:0pt;
+        mso-table-rspace:0pt;
+    }
+    .ReadMsgBody{
+        width:100%;
+    }
+    .ExternalClass{
+        width:100%;
+    }
+    p,a,li,td,blockquote{
+        mso-line-height-rule:exactly;
+    }
+    a[href^=tel],a[href^=sms]{
+        color:inherit;
+        cursor:default;
+        text-decoration:none;
+    }
+    p,a,li,td,body,table,blockquote{
+        -ms-text-size-adjust:100%;
+        -webkit-text-size-adjust:100%;
+    }
+    .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{
+        line-height:100%;
+    }
+    a[x-apple-data-detectors]{
+        color:inherit !important;
+        text-decoration:none !important;
+        font-size:inherit !important;
+        font-family:inherit !important;
+        font-weight:inherit !important;
+        line-height:inherit !important;
+    }
+    #bodyCell{
+        padding:10px;
+    }
+    .templateContainer{
+        max-width:1100px !important;
+    }
+    a.mcnButton{
+        display:block;
+    }
+    .mcnImage{
+        vertical-align:bottom;
+    }
+    .mcnTextContent{
+        word-break:break-word;
+    }
+    .mcnTextContent img{
+        height:auto !important;
+    }
+    .mcnDividerBlock{
+        table-layout:fixed !important;
+    }
+    /*
+     @tab Page
+     @section Background Style
+     @tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
+     */
+    body,#bodyTable{
+        /*@editable*/background-color:#FAFAFA;
+    }
+    /*
+     @tab Page
+     @section Background Style
+     @tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
+     */
+    #bodyCell{
+        /*@editable*/border-top:0;
+    }
+    /*
+     @tab Page
+     @section Email Border
+     @tip Set the border for your email.
+     */
+    .templateContainer{
+        /*@editable*/border:0;
+    }
+    /*
+     @tab Page
+     @section Heading 1
+     @tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
+     @style heading 1
+     */
+    h1{
+        /*@editable*/color:#202020;
+        /*@editable*/font-family:Helvetica;
+        /*@editable*/font-size:26px;
+        /*@editable*/font-style:normal;
+        /*@editable*/font-weight:bold;
+        /*@editable*/line-height:125%;
+        /*@editable*/letter-spacing:normal;
+        /*@editable*/text-align:left;
+    }
+    /*
+     @tab Page
+     @section Heading 2
+     @tip Set the styling for all second-level headings in your emails.
+     @style heading 2
+     */
+    h2{
+        /*@editable*/color:#202020;
+        /*@editable*/font-family:Helvetica;
+        /*@editable*/font-size:22px;
+        /*@editable*/font-style:normal;
+        /*@editable*/font-weight:bold;
+        /*@editable*/line-height:125%;
+        /*@editable*/letter-spacing:normal;
+        /*@editable*/text-align:left;
+    }
+    /*
+     @tab Page
+     @section Heading 3
+     @tip Set the styling for all third-level headings in your emails.
+     @style heading 3
+     */
+    h3{
+        /*@editable*/color:#202020;
+        /*@editable*/font-family:Helvetica;
+        /*@editable*/font-size:20px;
+        /*@editable*/font-style:normal;
+        /*@editable*/font-weight:bold;
+        /*@editable*/line-height:125%;
+        /*@editable*/letter-spacing:normal;
+        /*@editable*/text-align:left;
+    }
+    /*
+     @tab Page
+     @section Heading 4
+     @tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
+     @style heading 4
+     */
+    h4{
+        /*@editable*/color:#202020;
+        /*@editable*/font-family:Helvetica;
+        /*@editable*/font-size:18px;
+        /*@editable*/font-style:normal;
+        /*@editable*/font-weight:bold;
+        /*@editable*/line-height:125%;
+        /*@editable*/letter-spacing:normal;
+        /*@editable*/text-align:left;
+    }
+    /*
+     @tab Preheader
+     @section Preheader Style
+     @tip Set the background color and borders for your email's preheader area.
+     */
+    #templatePreheader{
+        /*@editable*/background-color:#FAFAFA;
+        /*@editable*/border-top:0;
+        /*@editable*/border-bottom:0;
+        /*@editable*/padding-top:9px;
+        /*@editable*/padding-bottom:9px;
+    }
+    /*
+     @tab Preheader
+     @section Preheader Text
+     @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
+     */
+    #templatePreheader .mcnTextContent,#templatePreheader .mcnTextContent p{
+        /*@editable*/color:#656565;
+        /*@editable*/font-family:Helvetica;
+        /*@editable*/font-size:12px;
+        /*@editable*/line-height:150%;
+        /*@editable*/text-align:left;
+    }
+    /*
+     @tab Preheader
+     @section Preheader Link
+     @tip Set the styling for your email's preheader links. Choose a color that helps them stand out from your text.
+     */
+    #templatePreheader .mcnTextContent a,#templatePreheader .mcnTextContent p a{
+        /*@editable*/color:#656565;
+        /*@editable*/font-weight:normal;
+        /*@editable*/text-decoration:underline;
+    }
+    /*
+     @tab Header
+     @section Header Style
+     @tip Set the background color and borders for your email's header area.
+     */
+    #templateHeader{
+        /*@editable*/background-color:#FFFFFF;
+        /*@editable*/border-top:0;
+        /*@editable*/border-bottom:0;
+        /*@editable*/padding-top:9px;
+        /*@editable*/padding-bottom:0;
+    }
+    /*
+     @tab Header
+     @section Header Text
+     @tip Set the styling for your email's header text. Choose a size and color that is easy to read.
+     */
+    #templateHeader .mcnTextContent,#templateHeader .mcnTextContent p{
+        /*@editable*/color:#202020;
+        /*@editable*/font-family:Helvetica;
+        /*@editable*/font-size:16px;
+        /*@editable*/line-height:150%;
+        /*@editable*/text-align:left;
+    }
+    /*
+     @tab Header
+     @section Header Link
+     @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
+     */
+    #templateHeader .mcnTextContent a,#templateHeader .mcnTextContent p a{
+        /*@editable*/color:#2BAADF;
+        /*@editable*/font-weight:normal;
+        /*@editable*/text-decoration:underline;
+    }
+    /*
+     @tab Upper Body
+     @section Upper Body Style
+     @tip Set the background color and borders for your email's upper body area.
+     */
+    #templateUpperBody{
+        /*@editable*/background-color:#FFFFFF;
+        /*@editable*/border-top:0;
+        /*@editable*/border-bottom:0;
+        /*@editable*/padding-top:0;
+        /*@editable*/padding-bottom:0;
+    }
+    /*
+     @tab Upper Body
+     @section Upper Body Text
+     @tip Set the styling for your email's upper body text. Choose a size and color that is easy to read.
+     */
+    #templateUpperBody .mcnTextContent,#templateUpperBody .mcnTextContent p{
+        /*@editable*/color:#202020;
+        /*@editable*/font-family:Helvetica;
+        /*@editable*/font-size:16px;
+        /*@editable*/line-height:150%;
+        /*@editable*/text-align:left;
+    }
+    /*
+     @tab Upper Body
+     @section Upper Body Link
+     @tip Set the styling for your email's upper body links. Choose a color that helps them stand out from your text.
+     */
+    #templateUpperBody .mcnTextContent a,#templateUpperBody .mcnTextContent p a{
+        /*@editable*/color:#2BAADF;
+        /*@editable*/font-weight:normal;
+        /*@editable*/text-decoration:underline;
+    }
+    /*
+     @tab Columns
+     @section Column Style
+     @tip Set the background color and borders for your email's columns.
+     */
+    #templateColumns{
+        /*@editable*/background-color:#FFFFFF;
+        /*@editable*/border-top:0;
+        /*@editable*/border-bottom:0;
+        /*@editable*/padding-top:0;
+        /*@editable*/padding-bottom:0;
+    }
+    /*
+     @tab Columns
+     @section Column Text
+     @tip Set the styling for your email's column text. Choose a size and color that is easy to read.
+     */
+    #templateColumns .columnContainer .mcnTextContent,#templateColumns .columnContainer .mcnTextContent p{
+        /*@editable*/color:#202020;
+        /*@editable*/font-family:Helvetica;
+        /*@editable*/font-size:16px;
+        /*@editable*/line-height:150%;
+        /*@editable*/text-align:left;
+    }
+    /*
+     @tab Columns
+     @section Column Link
+     @tip Set the styling for your email's column links. Choose a color that helps them stand out from your text.
+     */
+    #templateColumns .columnContainer .mcnTextContent a,#templateColumns .columnContainer .mcnTextContent p a{
+        /*@editable*/color:#2BAADF;
+        /*@editable*/font-weight:normal;
+        /*@editable*/text-decoration:underline;
+    }
+    /*
+     @tab Lower Body
+     @section Lower Body Style
+     @tip Set the background color and borders for your email's lower body area.
+     */
+    #templateLowerBody{
+        /*@editable*/background-color:#FFFFFF;
+        /*@editable*/border-top:0;
+        /*@editable*/border-bottom:2px solid #EAEAEA;
+        /*@editable*/padding-top:0;
+        /*@editable*/padding-bottom:9px;
+    }
+    /*
+     @tab Lower Body
+     @section Lower Body Text
+     @tip Set the styling for your email's lower body text. Choose a size and color that is easy to read.
+     */
+    #templateLowerBody .mcnTextContent,#templateLowerBody .mcnTextContent p{
+        /*@editable*/color:#202020;
+        /*@editable*/font-family:Helvetica;
+        /*@editable*/font-size:16px;
+        /*@editable*/line-height:150%;
+        /*@editable*/text-align:left;
+    }
+    /*
+     @tab Lower Body
+     @section Lower Body Link
+     @tip Set the styling for your email's lower body links. Choose a color that helps them stand out from your text.
+     */
+    #templateLowerBody .mcnTextContent a,#templateLowerBody .mcnTextContent p a{
+        /*@editable*/color:#2BAADF;
+        /*@editable*/font-weight:normal;
+        /*@editable*/text-decoration:underline;
+    }
+    /*
+     @tab Footer
+     @section Footer Style
+     @tip Set the background color and borders for your email's footer area.
+     */
+    #templateFooter{
+        /*@editable*/background-color:#FAFAFA;
+        /*@editable*/border-top:0;
+        /*@editable*/border-bottom:0;
+        /*@editable*/padding-top:9px;
+        /*@editable*/padding-bottom:9px;
+    }
+    /*
+     @tab Footer
+     @section Footer Text
+     @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
+     */
+    #templateFooter .mcnTextContent,#templateFooter .mcnTextContent p{
+        /*@editable*/color:#656565;
+        /*@editable*/font-family:Helvetica;
+        /*@editable*/font-size:12px;
+        /*@editable*/line-height:150%;
+        /*@editable*/text-align:center;
+    }
+    /*
+     @tab Footer
+     @section Footer Link
+     @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
+     */
+    #templateFooter .mcnTextContent a,#templateFooter .mcnTextContent p a{
+        /*@editable*/color:#656565;
+        /*@editable*/font-weight:normal;
+        /*@editable*/text-decoration:underline;
+    }
+    @media only screen and (min-width:768px){
+        .templateContainer{
+            width:1100px !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        body,table,td,p,a,li,blockquote{
+            -webkit-text-size-adjust:none !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        body{
+            width:100% !important;
+            min-width:100% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        #bodyCell{
+            padding-top:10px !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .columnWrapper{
+            max-width:100% !important;
+            width:100% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnImage{
+            width:100% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnCaptionTopContent,.mcnCaptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaptionRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageCardRightTextContentContainer{
+            max-width:100% !important;
+            width:100% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnBoxedTextContentContainer{
+            min-width:100% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnImageGroupContent{
+            padding:9px !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{
+            padding-top:9px !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnImageCardTopImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent{
+            padding-top:18px !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnImageCardBottomImageContent{
+            padding-bottom:9px !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnImageGroupBlockInner{
+            padding-top:0 !important;
+            padding-bottom:0 !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnImageGroupBlockOuter{
+            padding-top:9px !important;
+            padding-bottom:9px !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnTextContent,.mcnBoxedTextContentColumn{
+            padding-right:18px !important;
+            padding-left:18px !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{
+            padding-right:18px !important;
+            padding-bottom:0 !important;
+            padding-left:18px !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        .mcpreview-image-uploader{
+            display:none !important;
+            width:100% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Heading 1
+         @tip Make the first-level headings larger in size for better readability on small screens.
+         */
+        h1{
+            /*@editable*/font-size:22px !important;
+            /*@editable*/line-height:125% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Heading 2
+         @tip Make the second-level headings larger in size for better readability on small screens.
+         */
+        h2{
+            /*@editable*/font-size:20px !important;
+            /*@editable*/line-height:125% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Heading 3
+         @tip Make the third-level headings larger in size for better readability on small screens.
+         */
+        h3{
+            /*@editable*/font-size:18px !important;
+            /*@editable*/line-height:125% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Heading 4
+         @tip Make the fourth-level headings larger in size for better readability on small screens.
+         */
+        h4{
+            /*@editable*/font-size:16px !important;
+            /*@editable*/line-height:150% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Boxed Text
+         @tip Make the boxed text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+         */
+        .mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentContainer .mcnTextContent p{
+            /*@editable*/font-size:14px !important;
+            /*@editable*/line-height:150% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Preheader Visibility
+         @tip Set the visibility of the email's preheader on small screens. You can hide it to save space.
+         */
+        #templatePreheader{
+            /*@editable*/display:block !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Preheader Text
+         @tip Make the preheader text larger in size for better readability on small screens.
+         */
+        #templatePreheader .mcnTextContent,#templatePreheader .mcnTextContent p{
+            /*@editable*/font-size:14px !important;
+            /*@editable*/line-height:150% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Header Text
+         @tip Make the header text larger in size for better readability on small screens.
+         */
+        #templateHeader .mcnTextContent,#templateHeader .mcnTextContent p{
+            /*@editable*/font-size:16px !important;
+            /*@editable*/line-height:150% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Upper Body Text
+         @tip Make the upper body text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+         */
+        #templateUpperBody .mcnTextContent,#templateUpperBody .mcnTextContent p{
+            /*@editable*/font-size:16px !important;
+            /*@editable*/line-height:150% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Column Text
+         @tip Make the column text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+         */
+        #templateColumns .columnContainer .mcnTextContent,#templateColumns .columnContainer .mcnTextContent p{
+            /*@editable*/font-size:16px !important;
+            /*@editable*/line-height:150% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Lower Body Text
+         @tip Make the lower body text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+         */
+        #templateLowerBody .mcnTextContent,#templateLowerBody .mcnTextContent p{
+            /*@editable*/font-size:16px !important;
+            /*@editable*/line-height:150% !important;
+        }
+        
+    }	@media only screen and (max-width: 1100px){
+        /*
+         @tab Mobile Styles
+         @section Footer Text
+         @tip Make the footer content text larger in size for better readability on small screens.
+         */
+        #templateFooter .mcnTextContent,#templateFooter .mcnTextContent p{
+            /*@editable*/font-size:14px !important;
+            /*@editable*/line-height:150% !important;
+        }
+        
+    }</style></head>
+<body>
+    <center>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+            <tr>
+                <td align="center" valign="top" id="bodyCell">
+                    <!-- BEGIN TEMPLATE // -->
+                    <!--[if gte mso 9]>
+                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                     <tr>
+                     <td align="center" valign="top" width="600" style="width:600px;">
+                     <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
+                        <tr>
+                            <td valign="top" id="templatePreheader"></td>
+                        </tr>
+                        <tr>
+                            <td valign="top" id="templateHeader"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width:100%;">
+                                <tbody class="mcnImageBlockOuter">
+                                    <tr>
+                                        <td valign="top" style="padding:9px" class="mcnImageBlockInner">
+                                            <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width:100%;">
+                                                <tbody><tr>
+                                                    <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;">
+                                                        
+                                                        
+                                                        <img align="center" alt="" src="https://gallery.mailchimp.com/feebfb5352027edafd408cf4e/images/08f14ae4-8dcd-444b-a52d-94592391ae78.jpg" width="564" style="max-width:6300px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                                            
+                                                            
+                                                            </td>
+                                                </tr>
+                                                </tbody></table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table></td>
+                        </tr>
+                        <tr>
+                            <td valign="top" id="templateUpperBody"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+                                <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                                            <!--[if mso]>
+                                             <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                             <tr>
+                                             <![endif]-->
+                                            
+                                            <!--[if mso]>
+                                             <td valign="top" width="600" style="width:600px;">
+                                             <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" class="mcnTextContentContainer">
+                                                <tbody><tr>
+                                                    
+                                                    <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                                                        
+                                                        <span style="font-size:14px"><u><h2>Big Data</u>&nbsp;4a&nbsp;<u>Big Investment</h2></u>&nbsp;<br>
+                                                            <span style="line-height:20.8px">Our project uses algorithms&nbsp;and big data to compare current loan applicants&nbsp;against&nbsp;previous&nbsp;loan applicants to provide you insight on whether lending money to&nbsp;that particular applicant would result in a successful transaction or a Default. For example, say that we have two people seeking a loan from Lending Club,&nbsp;Joe and Sandra;&nbsp;&nbsp;Joe and Sandra are both&nbsp;current loan applicants and their stats are below:</span></span><br>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--[if mso]>
+                                             </td>
+                                             <![endif]-->
+                                            
+                                            <!--[if mso]>
+                                             </tr>
+                                             </table>
+                                             <![endif]-->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table></td>
+                        </tr>
+                        <tr>
+                            <td valign="top" id="templateColumns">
+                                <!--[if gte mso 9]>
+                                 <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                                 <tr>
+                                 <td align="center" valign="top" width="300" style="width:300px;">
+                                 <![endif]-->
+                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="450" class="columnWrapper">
+                                    <tr>
+                                        <td valign="top" class="columnContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+                                            <tbody class="mcnTextBlockOuter">
+                                                <tr>
+                                                    <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                                                        <!--[if mso]>
+                                                         <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                         <tr>
+                                                         <![endif]-->
+                                                        
+                                                        <!--[if mso]>
+                                                         <td valign="top" width="300" style="width:300px;">
+                                                         <![endif]-->
+                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" class="mcnTextContentContainer">
+                                                            <tbody><tr>
+                                                                
+                                                                <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                                                                    
+                                                                    <div style="text-align: center;"><strong>Joe Loan Stats</strong></div>
+                                                                    
+                                                                    <ul>
+                                                                        <li>Loan Amount: $30,000</li>
+                                                                        <li>Loan Length: 36 months</li>
+                                                                        <li>Location: California&nbsp;</li>
+                                                                        <li>Reason: Vacation</li>
+                                                                        <li>Fico Score: 466</li>
+                                                                        <li>Annual Income: $45,000</li>
+                                                                        <li>Monthly Payment: $1,114&nbsp;</li>
+                                                                    </ul>
+                                                                    
+                                                                </td>
+                                                            </tr>
+                                                            </tbody></table>
+                                                        <!--[if mso]>
+                                                         </td>
+                                                         <![endif]-->
+                                                        
+                                                        <!--[if mso]>
+                                                         </tr>
+                                                         </table>
+                                                         <![endif]-->
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageCardBlock">
+                                            <tbody class="mcnImageCardBlockOuter">
+                                                <tr>
+                                                    <td class="mcnImageCardBlockInner" valign="top" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                                                        
+                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnImageCardBottomContent" width="100%" style="background-color: #404040;">
+                                                            <tbody><tr>
+                                                                <td class="mcnImageCardBottomImageContent" align="left" valign="top" style="padding-top:0px; padding-right:0px; padding-bottom:0; padding-left:0px;">
+                                                                    
+                                                                    
+                                                                    
+                                                                    <img alt="" src="http://s31.postimg.org/lrjagjkl7/Vector_Space.jpg" width="450" style="max-width:720px;" class="mcnImage">
+                                                                        
+                                                                        
+                                                                        </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="mcnTextContent" valign="top" style="padding: 9px 18px;color: #F2F2F2;font-family: Helvetica;font-size: 14px;font-weight: normal;text-align: center;" width="246">
+                                                                    Create a unique vector to display each loan applicant, Graph it, Compare.&nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            </tbody></table>
+                                                        
+                                                        
+                                                        
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table></td>
+                                    </tr>
+                                </table>
+                                <!--[if gte mso 9]>
+                                 </td>
+                                 <td align="center" valign="top" width="300" style="width:300px;">
+                                 <![endif]-->
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="450" class="columnWrapper">
+                                    <tr>
+                                        <td valign="top" class="columnContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+                                            <tbody class="mcnTextBlockOuter">
+                                                <tr>
+                                                    <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                                                        <!--[if mso]>
+                                                         <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                                         <tr>
+                                                         <![endif]-->
+                                                        
+                                                        <!--[if mso]>
+                                                         <td valign="top" width="300" style="width:300px;">
+                                                         <![endif]-->
+                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" class="mcnTextContentContainer">
+                                                            <tbody><tr>
+                                                                
+                                                                <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                                                                    
+                                                                    <div style="text-align: center;"><strong>Sandra Loan Stats</strong></div>
+                                                                    
+                                                                    <ul>
+                                                                        <li>Loan Amount: $30,000</li>
+                                                                        <li>Loan Length: 60 months</li>
+                                                                        <li>Location: Florida&nbsp;</li>
+                                                                        <li>Reason: Debt Consolidation</li>
+                                                                        <li>Fico Score: 705</li>
+                                                                        <li>Annual Income: $70,000</li>
+                                                                        <li>Monthly Payment: $652&nbsp;</li>
+                                                                    </ul>
+                                                                    
+                                                                </td>
+                                                            </tr>
+                                                            </tbody></table>
+                                                        <!--[if mso]>
+                                                         </td>
+                                                         <![endif]-->
+                                                        
+                                                        <!--[if mso]>
+                                                         </tr>
+                                                         </table>
+                                                         <![endif]-->
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageCardBlock">
+                                            <tbody class="mcnImageCardBlockOuter">
+                                                <tr>
+                                                    <td class="mcnImageCardBlockInner" valign="top" style="padding-top:9px; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                                                        
+                                                        <table align="right" border="0" cellpadding="0" cellspacing="0" class="mcnImageCardBottomContent" width="100%" style="background-color: #404040;">
+                                                            <tbody><tr>
+                                                                <td class="mcnImageCardBottomImageContent" align="left" valign="top" style="padding-top:0px; padding-right:0px; padding-bottom:0; padding-left:0px;">
+                                                                    
+                                                                    
+                                                                    
+                                                                    <img alt="" src="http://s31.postimg.org/ucil7kyyj/KNN.png" width="450" style="max-width:600px;" class="mcnImage">
+                                                                        
+                                                                        
+                                                                        </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="mcnTextContent" valign="top" style="padding: 9px 18px;color: #F2F2F2;font-family: Helvetica;font-size: 14px;font-weight: normal;text-align: center;" width="246">
+                                                                    K-Nearest-Neighbors, Finds the nearest node, and classifies it accordingly. &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            </tbody></table>
+                                                        
+                                                        
+                                                        
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table></td>
+                                    </tr>
+                                </table>
+                                <!--[if gte mso 9]>
+                                 </td>
+                                 </tr>
+                                 </table>
+                                 <![endif]-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" id="templateLowerBody"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+                                <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                                            <!--[if mso]>
+                                             <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                             <tr>
+                                             <![endif]-->
+                                            
+                                            <!--[if mso]>
+                                             <td valign="top" width="600" style="width:600px;">
+                                             <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" class="mcnTextContentContainer">
+                                                <tbody><tr>
+                                                    
+                                                    <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                                                        
+                                                        In our example above, it may not be a surprise that a general capacity analysis of the situation may show that Joe is would not be likely to fulfill a "Fully Paid" loan under those circumstances.<br>
+                                                        <br>
+                                                        So lets look at Sandra's case; a general capacity analysis would show that she is most likely capable of achieving a "Fully Paid" status under those circumstances. But let us take a further dive into the analysis, and compare her specific loan stats to past loan applicants using KNN and a Vector Space model of data. In this particular case: [list details here for this case]&nbsp;
+                                                    </td>
+                                                </tr>
+                                                </tbody></table>
+                                            <!--[if mso]>
+                                             </td>
+                                             <![endif]-->
+                                            
+                                            <!--[if mso]>
+                                             </tr>
+                                             </table>
+                                             <![endif]-->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+                                <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                                            <!--[if mso]>
+                                             <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                             <tr>
+                                             <![endif]-->
+                                            
+                                            <!--[if mso]>
+                                             <td valign="top" width="600" style="width:600px;">
+                                             <![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" class="mcnTextContentContainer">
+                                                <tbody><tr>
+                                                    
+                                                    <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                                                        
+                                                        <h2 class="null"><strong>Details</strong></h2>
+                                                        Like the example shows there are certainly some things that can be analyzed with just normal eyes, however, other applicants may be a little harder to rule out, such as in Sandra's case.&nbsp;<br>
+                                                        <br>
+                                                        So the example shows a little glimpse into what we analyze, in actuality we analyze <a href="http://linktocome.com" target="_blank">15+ quantitative stats</a> on each individual loan applicant.&nbsp;<br>
+                                                        <br>
+                                                        In our algorithms we use <a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm" target="_blank">KNN</a> to show the break down of the closest applicants that best match the applicant in questions, and we also use <a href="https://en.wikipedia.org/wiki/Vector_space" target="_blank">Vector Space Modeling</a> to determine Danger areas, and help predict bad opportunities.&nbsp;
+                                                        <br>
+                                                        <br>
+                                                        <a href="https://lendingclub-gondee.c9users.io/inputforms/new"><h3 align="center"> Try our System -- </a> <a href="https://lendingclub-gondee.c9users.io/inputforms">  See Past Results </h3> </a>
+                                                    </td>
+                                                </tr>
+                                                
+                                                </tbody></table>
+                                            <!--[if mso]>
+                                             </td>
+                                             <![endif]-->
+                                            
+                                            <!--[if mso]>
+                                             </tr>
+                                             </table>
+                                             <![endif]-->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table></td>
+                        </tr>
+                        <tr>
+                            <td valign="top" id="templateFooter"></td>
+                        </tr>
+                    </table>
+                    <!--[if gte mso 9]>
+                     </td>
+                     </tr>
+                     </table>
+                     <![endif]-->
+                    <!-- // END TEMPLATE -->
+                </td>
+                
+                </table>
+    </center>
+</body>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @homes.each do |home| %>
-      <tr>
-        <td><%= link_to 'Show', home %></td>
-        <td><%= link_to 'Edit', edit_home_path(home) %></td>
-        <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Home', new_home_path %>
+</html>
