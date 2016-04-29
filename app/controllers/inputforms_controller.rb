@@ -25,7 +25,7 @@ class InputformsController < ApplicationController
     
     
     
-    knn = KNN.new(@listOfVectors, :distance_measure => :cosine_similarity)
+    knn = KNN.new(@listOfVectors, :distance_measure => :cosine_similarity) #We also need to change this to add both Euclidian distance and Cosine sim in display
     @globals = knn.nearest_neighbours( @inputVector, @tempinput.k.to_i)
     
     for index in @globals do

@@ -11,47 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :loan_amnt %><br>
-    <%= f.text_field :loan_amnt %>
+  <div class="field form-group">
+    <%= f.label :loan_amnt, class: 'col-sm-2 control-label' %><br>
+    <%= f.text_field :loan_amnt,class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :installment %><br>
-    <%= f.text_field :installment %>
+  <div class="field form-group">
+    <%= f.label :installment, class: 'col-sm-2 control-label' %><br>
+    <%= f.text_field :installment,class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :grade %><br>
-    <%= f.text_field :grade %>
+  <div class="field form-group">
+    <%= f.label :grade, class: 'col-sm-2 control-label' %><br>
+    <%= f.text_field :grade, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :emp_length %><br>
-    <%= f.text_field :emp_length %>
+  <div class="field form-group">
+    <%= f.label :emp_length, class: 'col-sm-2 control-label' %><br>
+    <%= f.text_field :emp_length,class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :annual_inc %><br>
-    <%= f.text_field :annual_inc %>
+  <div class="field form-group">
+    <%= f.label :annual_inc, class: 'col-sm-2 control-label' %><br>
+    <%= f.text_field :annual_inc,class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :dti %><br>
-    <%= f.text_field :dti %>
+  <div class="field form-group">
+    <%= f.label :dti, class: 'col-sm-2 control-label' %><br>
+    <%= f.text_field :dti,class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :fico_range_low %><br>
-    <%= f.text_field :fico_range_low %>
+  <div class="field form-group">
+    <%= f.label :fico_range_low, class: 'col-sm-2 control-label' %><br>
+    <%= f.text_field :fico_range_low,class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :fico_range_high %><br>
-    <%= f.text_field :fico_range_high %>
+  <div class="field form-group">
+    <%= f.label :fico_range_high, class: 'col-sm-2 control-label' %><br>
+    <%= f.text_field :fico_range_high,class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :number_inq_last_6months %><br>
-    <%= f.text_field :number_inq_last_6months %>
+  <div class="field form-group">
+    <%= f.label :number_inq_last_6months, class: 'col-sm-2 control-label' %><br>
+    <%= f.text_field :number_inq_last_6months,class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :k %><br>
-    <%= f.text_field :k %>
+  <div class="field form-group">
+    <%= f.label :k, class: 'col-sm-2 control-label' %><br>
+    <%= f.text_field :k,class: 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
+
