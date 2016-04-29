@@ -1,64 +1,181 @@
-<p id="notice"><%= notice %></p>
+<blockquote>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    Your Information: <strong> Input Vector </strong>
+  </div>
+  <div class="panel-body">
+  <table class="table table-bordered table-hover table-striped">
+    <tr>
+      <th>Loan Amount</th>
+      <th>Installment</th>
+      <th>Grade</th>
+      <th>Employment Length</th>
+      <th>Annual Income</th>
+      <th>Debt to Income Ratio</th>
+      <th>FCL</th>
+      <th>FCH</th>
+      <th>Number Inquires (6 Months)</th>
+      <th>K neighbors</th>
+    </tr>
+    
+    <tr>
+      <th><%= @inputform.loan_amnt %></th>
+      <th><%= @inputform.installment %></th>
+      <th><%= @inputform.grade %></th>
+      <th><%= @inputform.emp_length %></th>
+      <th><%= @inputform.annual_inc %></th>
+      <th><%= @inputform.dti %>%</th>
+      <th><%= @inputform.fico_range_low %></th>
+      <th><%= @inputform.fico_range_high %></th>
+      <th><%= @inputform.number_inq_last_6months %></th>
+      <th><%= @inputform.k %></th>
+    </tr>
+    
+  </table>
+  
+  </div>
+</div>
+
+
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Result</h3>
+  </div>
+  <div class="panel-body">
+    <div class="jumbotron">
+      <h1><%=  100.00* (@numFullyPaid / @tempinput.k.to_f) %>% </h1>
+        
+      <p>Using <%= @inputform.k %> neighbors and Cosine similarity</p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-info" >
+  <div class="panel-heading" data-toggle="collapse" data-target="#demo">
+    <h3 class="panel-title">People who are similar</h3>
+  </div>
+  <div class="panel-body" id="demo" class="collapse">
+    <table class="table table-bordered table-hover table-striped">
+    <tr>
+      <th>Cosine % Similar</th>
+      <th>Loan Amount</th>
+      <th>Installment</th>
+      <th>Grade</th>
+      <th>Employment Length</th>
+      <th>Annual Income</th>
+      <th>Debt to Income Ratio</th>
+      <th>FCL</th>
+      <th>FCH</th>
+    </tr>
+    <% @similarityScore = @similarityScore.reverse  %>
+    <% @similarPeople.reverse.first(10).each do |temp| %>
+      <tr>
+        <th> <%= (100.00 *  @similarityScore[@temp]).round(2) %>%  </th>
+        <th><%= temp.loan_amnt %></th>
+        <th><%= temp.installment %></th>
+        <th><%= temp.grade %></th>
+        <th><%= temp.emp_length %></th>
+        <th><%= temp.annual_inc %></th>
+        <th><%= temp.dti %>%</th>
+        <th><%= temp.fico_range_low %></th>
+        <th><%= temp.fico_range_high %></th>
+      </tr>
+      <% @temp = @temp + 1 %>
+    <% end %>
+
+    
+  </table>
+    
+    
+    
+    
+    
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Result</h3>
+  </div>
+  <div class="panel-body">
+    <div class="jumbotron">
+      <h1><%=  100.00* (@numFullyPaid2 / @tempinput.k.to_f) %>% </h1>
+      <p>Using <%= @inputform.k %> neighbors and Euclidian Distance</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-info" >
+  <div class="panel-heading" data-toggle="collapse" data-target="#demo">
+    <h3 class="panel-title">People who are similar</h3>
+  </div>
+  <div class="panel-body" id="demo" class="collapse">
+    <table class="table table-bordered table-hover table-striped">
+    <tr>
+      <th>Euclidian Distance</th>
+      <th>Loan Amount</th>
+      <th>Installment</th>
+      <th>Grade</th>
+      <th>Employment Length</th>
+      <th>Annual Income</th>
+      <th>Debt to Income Ratio</th>
+      <th>FCL</th>
+      <th>FCH</th>
+    </tr>
+    <% @similarityScore2 = @similarityScore2.reverse  %>
+    <% @similarPeople2.reverse.first(10).each do |temp| %>
+      <tr>
+        <th> <%=   @similarityScore2[@temp2].round(2) %>  </th>
+        <th><%= temp.loan_amnt %></th>
+        <th><%= temp.installment %></th>
+        <th><%= temp.grade %></th>
+        <th><%= temp.emp_length %></th>
+        <th><%= temp.annual_inc %></th>
+        <th><%= temp.dti %>%</th>
+        <th><%= temp.fico_range_low %></th>
+        <th><%= temp.fico_range_high %></th>
+      </tr>
+      <% @temp2 = @temp2 + 1 %>
+    <% end %>
+
+    
+  </table>
+    
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 <p>
-  <strong>Loan amnt:</strong>
-  <%= @inputform.loan_amnt %>
-</p>
-
-<p>
-  <strong>Installment:</strong>
-  <%= @inputform.installment %>
-</p>
-
-<p>
-  <strong>Grade:</strong>
-  <%= @inputform.grade %>
-</p>
-
-<p>
-  <strong>Emp length:</strong>
-  <%= @inputform.emp_length %>
-</p>
-
-<p>
-  <strong>Annual inc:</strong>
-  <%= @inputform.annual_inc %>
-</p>
-
-<p>
-  <strong>Dti:</strong>
-  <%= @inputform.dti %>
-</p>
-
-<p>
-  <strong>Fico range low:</strong>
-  <%= @inputform.fico_range_low %>
-</p>
-
-<p>
-  <strong>Fico range high:</strong>
-  <%= @inputform.fico_range_high %>
-</p>
-
-<p>
-  <strong>Number inq last 6months:</strong>
-  <%= @inputform.number_inq_last_6months %>
-</p>
-
-<p>
-  <strong> Vectors baby:</strong>
-  <%= @listOfVectors %>
-</p>
-
-<p>
-  <strong> Input Vector: </strong>
-  <%= @inputVector %>
-  <strong> KNN Baby :</strong>
-  <%= @golabals %>
+  <strong> Closest Neighbors By Euclidian Distance: </strong>
+  <%= @nearestNeighborsEuc %>
 </p>
 
 
-<!-- 
+<div style="height:100px;width:140px;overflow:auto;background-color:green;color:white;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;">
+
+<!--
 <%= @listOfVectors.each do |temp| %>
       <tr>
         <td><%= temp %></td>
@@ -66,6 +183,42 @@
       </tr>
  <% end %>
 -->
+  
+</div>
+
+
+
+
+
+
+
+
+<p>
+    <strong> We compared your input to <%= @listOfVectors.size %> other loans below: </strong>
+</p>
+<div style="height:200px;width:700px;overflow:auto;color:black;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;">
+
+
+<!--
+<%= @listOfVectors.each do |temp| %>
+  <% temp %>
+<% end %>
+
+    <table>
+      <tr>
+        <th>Data</th>
+      </tr>
+    <%= @listOfVectors.each do |temp| %>
+       <tr><th><% temp %></th></tr>
+       
+    <% end %>
+    </table>
+  -->
+</div>
+
+
+</blockquote>
+
 
 <%= link_to 'Edit', edit_inputform_path(@inputform) %> |
 <%= link_to 'Back', inputforms_path %>

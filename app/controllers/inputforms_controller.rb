@@ -11,9 +11,8 @@ class InputformsController < ApplicationController
   # GET /inputforms/1.json
   def show
     @tempinput = Inputform.find(params[:id])
-    @temploan = Loan.where("loan_amnt > ?", 500).limit(1000)
+    @temploan = Loan.where("loan_amnt > ?", 500).limit(20000)
     
-    @inputVector = [ @tempinput.loan_amnt.to_f, @tempinput.installment.to_f, @tempinput.annual_inc.to_f, @tempinput.dti.to_f, @tempinput.fico_range_low.to_f, @tempinput.fico_range_high.to_f, @tempinput.number_inq_last_6months.to_f]
     
     @listOfVectors = []
     @listOfIndex = []
@@ -22,22 +21,59 @@ class InputformsController < ApplicationController
         @listOfVectors.push(newVector)
         @listOfIndex.push(loan.id)
     end 
+
+    #We also need to change this to add both Euclidian distance and Cosine sim in display
+    @inputVector = [ @tempinput.loan_amnt.to_f, @tempinput.installment.to_f, @tempinput.annual_inc.to_f, @tempinput.dti.to_f, @tempinput.fico_range_low.to_f, @tempinput.fico_range_high.to_f, @tempinput.number_inq_last_6months.to_f]
+    knn = KNN.new(@listOfVectors, :distance_measure => :cosine_similarity)
+    @nearestNeighborsCos = knn.nearest_neighbours( @inputVector, @tempinput.k.to_i)
+    
+    #@listOfVectorsCopy = Marshal.load( Marshal.dump(@listOfVectors) )
+    knn2 = KNN.new(@listOfVectors, :distance_measure => :euclidean_distance)
+    @nearestNeighborsEuc = knn2.nearest_neighbours( @inputVector, @tempinput.k.to_i)
+    
+
+    
+    @paidStatusVec = []
+    @numFullyPaid = 0.00
+    @similarPeople = []
+    @similarityScore = []
+    @temp = 0
+    
+    for vec in @nearestNeighborsCos do
+      temp = (Loan.find( @listOfIndex[vec.first] ))
+      @similarityScore.push(vec.second)
+      @similarPeople.push(temp)
+      stringData = temp.loan_status.to_s
+      if stringData.include? "Fully Paid"
+        @paidStatusVec.push(1)
+        @numFullyPaid = @numFullyPaid + 1.00
+      else
+        @paidStatusVec.push(0)
+      end
+    end 
     
     
     
-    knn = KNN.new(@listOfVectors, :distance_measure => :cosine_similarity) #We also need to change this to add both Euclidian distance and Cosine sim in display
-    @globals = knn.nearest_neighbours( @inputVector, @tempinput.k.to_i)
+    @paidStatusVec2 = []
+    @numFullyPaid2 = 0.00
+    @similarPeople2 = []
+    @similarityScore2 = []
+    @temp2 = 0
+
     
-    for index in @globals do
-        index.first #this should be pulling the "fully paid" data for the loan to send to the html for displaying stats. 
-        
-    end
+    for vec in @nearestNeighborsEuc do
+      temp = (Loan.find( @listOfIndex[vec.first] ))
+      @similarityScore2.push(vec.second)
+      @similarPeople2.push(temp)
+      stringData = temp.loan_status.to_s
+      if stringData.include? "Fully Paid"
+        @paidStatusVec2.push(1)
+        @numFullyPaid2 = @numFullyPaid2 + 1.00
+      else
+        @paidStatusVec2.push(0)
+      end
+    end 
     
-    
-    
-    #puts listOfVectors
-    
-    #KNN.new(@data, :distance_measure => :euclidean_distance)
     
   end
 
