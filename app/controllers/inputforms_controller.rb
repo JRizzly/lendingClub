@@ -11,7 +11,7 @@ class InputformsController < ApplicationController
   # GET /inputforms/1.json
   def show
     @tempinput = Inputform.find(params[:id])
-    @temploan = Loan.where("loan_amnt > ?", 500).limit(20000)
+    @temploan = Loan.where("loan_amnt > ?", 500).limit(1000)
     
     
     @listOfVectors = []

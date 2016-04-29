@@ -134,7 +134,7 @@
       <th>FCL</th>
       <th>FCH</th>
     </tr>
-    <% @similarityScore2 = @similarityScore2.reverse  %>
+    
     <% @similarPeople2.reverse.first(10).each do |temp| %>
       <tr>
         <th> <%=   @similarityScore2[@temp2].round(2) %>  </th>
@@ -158,63 +158,24 @@
 </div>
 
 
+<br>
 
-
-
-
-
-
-
-
-
-<p>
-  <strong> Closest Neighbors By Euclidian Distance: </strong>
-  <%= @nearestNeighborsEuc %>
-</p>
-
-
-<div style="height:100px;width:140px;overflow:auto;background-color:green;color:white;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;">
-
-<!--
-<%= @listOfVectors.each do |temp| %>
-      <tr>
-        <td><%= temp %></td>
-        <BR>
-      </tr>
- <% end %>
--->
-  
-</div>
-
-
-
-
-
-
-
-
-<p>
-    <strong> We compared your input to <%= @listOfVectors.size %> other loans below: </strong>
-</p>
-<div style="height:200px;width:700px;overflow:auto;color:black;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;">
-
-
-<!--
-<%= @listOfVectors.each do |temp| %>
-  <% temp %>
-<% end %>
-
-    <table>
-      <tr>
-        <th>Data</th>
-      </tr>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">We compared your input to <%= @listOfVectors.size %> other loans below: </h3>
+  </div>
+  <div class="panel-body">
+    <div style="height:200px;width:100%;overflow:auto;color:black;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;border:2px solid green;">
     <%= @listOfVectors.each do |temp| %>
        <tr><th><% temp %></th></tr>
-       
     <% end %>
-    </table>
-  -->
+    </div>
+    
+  </div>
 </div>
+
+
+
 
 
 </blockquote>

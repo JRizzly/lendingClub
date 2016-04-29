@@ -11,50 +11,76 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= f.label :loan_amnt, class: 'col-sm-2 control-label' %><br>
+
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    Your Information: <strong> Input Vector </strong>
+  </div>
+  <div class="panel-body">
+  <table class="table table-bordered table-hover table-striped">
+    <tr>
+      <th>Loan Amount</th>
+      <th>Installment</th>
+      <th>Grade</th>
+      <th>Employment Length</th>
+      <th>Annual Income</th>
+      <th>Debt to Income Ratio</th>
+      <th>FCL</th>
+      <th>FCH</th>
+      <th>Number Inquires (6 Months)</th>
+      <th>K neighbors</th>
+    </tr>
+    
+    <tr>
+      <th><div class="field form-group">
     <%= f.text_field :loan_amnt,class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :installment, class: 'col-sm-2 control-label' %><br>
+          </div>
+      </th>
+      <th><div class="field form-group">
     <%= f.text_field :installment,class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :grade, class: 'col-sm-2 control-label' %><br>
+  </div></th>
+      <th><div class="field form-group">
     <%= f.text_field :grade, class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :emp_length, class: 'col-sm-2 control-label' %><br>
+  </div></th>
+      <th><div class="field form-group">
     <%= f.text_field :emp_length,class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :annual_inc, class: 'col-sm-2 control-label' %><br>
+  </div></th>
+      <th><div class="field form-group">
     <%= f.text_field :annual_inc,class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :dti, class: 'col-sm-2 control-label' %><br>
+  </div></th>
+      <th><div class="field form-group">
     <%= f.text_field :dti,class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :fico_range_low, class: 'col-sm-2 control-label' %><br>
+  </div></th>
+      <th><div class="field form-group">
     <%= f.text_field :fico_range_low,class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :fico_range_high, class: 'col-sm-2 control-label' %><br>
+  </div></th>
+      <th><div class="field form-group">
     <%= f.text_field :fico_range_high,class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :number_inq_last_6months, class: 'col-sm-2 control-label' %><br>
+  </div></th>
+      <th><div class="field form-group">
     <%= f.text_field :number_inq_last_6months,class: 'form-control' %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :k, class: 'col-sm-2 control-label' %><br>
+  </div></th>
+      <th><div class="field form-group">
     <%= f.text_field :k,class: 'form-control' %>
+  </div></th>
+    </tr>
+    
+  </table>
+  
   </div>
+</div>
   <div class="actions form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit %>
+    <div class="col-sm-offset-0 col-sm-10">
+      <%= f.submit class: 'btn btn-lg btn-primary'%>
     </div>
+  </div>
   </div>
 <% end %>
 
+      
+    
+    
+    
+        <img src="http://s32.postimg.org/j9gdp6xsl/lendingclub_investor_screenshot.png">
+   
